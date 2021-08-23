@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado clientes</title>
+</head>
+<body>
+
+    {% if clientes %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Surname </th>
+                    <th> Credit Score </th>
+                    <th> Geography </th>
+                    <th> Gender </th>
+                    <th> Age </th>
+                    <th> Tenure </th>
+                    <th> Balance </th>
+                    <th> NumOfProd </th>
+                    <th> HasCrCard </th>
+                    <th> IsActiveMember </th>
+                    <th> EstimatedSalary </th>
+                    <th> Exited </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{cliente.customerId}}</td>
+                        <td>{{cliente.surname}}</td>
+                        <td>{{cliente.credit_score}}</td>
+                        <td>{{cliente.geography}}</td>
+                        <td>{{cliente.gender}}</td>
+                        <td>{{cliente.age}}</td>
+                        <td>{{cliente.tenure}}</td>
+                        <td>{{cliente.balance}}</td>
+                        <td>{{cliente.number_of_products}}</td>
+                        <td>{{cliente.has_credit_card}}</td>
+                        <td>{{cliente.active_member}}</td>
+                        <td>{{cliente.estimated_salary}}</td>
+                        <td>{{cliente.exited}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    
+    {% else %}
+    
+        <h1> Lista de clientes vacia </h1>    
+
+    {% endif %}
+</body>
+</html>

@@ -7,6 +7,8 @@ from .models import Clientes
 class Inicio(TemplateView):
     template_name = 'index.html'
 
-class ListadoClientes(View):
+class ListadoClientes(ListView):
     model = Clientes
     template_name = 'clientes/listado_clientes.html'
+    context_object_name = 'clientes'
+
